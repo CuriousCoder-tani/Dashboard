@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="js/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item ">
+              <a href="About.html">
+                <div class="door"></div>
+                <span>About </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="skills.html">
+                <div class="door"></div>
+                <span>Skills </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="Resume.html">
+                <div class="door"></div>
+                <span>Resume </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="Education.html">
+                <div class="door"></div>
+                <span>Education </span>
+              </a>
+            </li>
+            <li class="nav-item border-blue">
+              <a href="Contact.html">
+                <div class="door" style="background-color: #fbead1;"></div>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div><img src="images/strip.jpg" alt="" height="25px" width="100%" /></div>
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <div id="email">
+          <a href="mailto:Tanyashukla09102003@gmail.com">Tanyashukla09102003@gmail.com</a>
+        </div>
+        <section id="mail">
+          <i class="fa-solid fa-envelope" onclick="emailBox()"></i>
+          <br />
+          Email
+        </section>
+      </div>
+      <div class="col-sm-6 text-center ">
+        <form id="contact" class="p-2">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="cont">Your Email/Contact Number</label>
+          <input type="text" id="cont" name="email" required>
+
+          <label for="msg">Your Message:</label>
+          <textarea id="msg" name="message" rows="5" required></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+        <section id="message">
+          <i class="fa-solid fa-envelope" onclick="contactBox()"></i>
+          <br /> Leave a Message<br />
+        </section>
+      </div>
+    </div>
+  </div>
+  <script>
+    const mail = document.getElementById('mail');
+    const message = document.getElementById('message');
+    const email = document.getElementById('email');
+    let m = email.innerHTML;
+    const contact = document.getElementById('contact');
+    let box = contact.innerHTML;
+    contact.style.transform = 'scale(0)';
+    let sc = 0;
+    let scb = 0;
+    email.innerHTML = ' ';
+    contact.innerHTML = ' ';
+    function emailBox() {
+      email.innerHTML = m;
+      if (sc == 0) {
+        email.style.transform = 'scale(8)';
+        mail.style.marginTop = '30%';
+        sc = 20;
+      }
+      else {
+        email.style.transform = 'scale(0)';
+        mail.style.marginTop = '5%';
+        sc = 0;
+      }
+    }
+    function contactBox() {
+      contact.innerHTML = box;
+      if (scb == 0) {
+        contact.style.transform = 'scale(2)';
+        scb = 5;
+        message.style.marginTop = '5%';
+      }
+      else {
+        contact.style.transform = 'scale(0)';
+        scb = 0;
+        message.style.marginTop = '-25%';
+      }
+    }
+  </script>
+</body>
+
+</html>
